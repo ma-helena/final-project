@@ -29,5 +29,5 @@ public interface CarrinhoFeign {
     ResponseEntity<Flux<Carrinho>> findAll();
 
     @PostMapping("/carrinho/{atualizar}")
-    ResponseEntity<Mono<Void>> atualizar(@PathVariable("atualizar") Long id, Carrinho carrinho);
+    ResponseEntity<Mono<Void>> atualizar(@PathVariable("atualizar") String id, Carrinho carrinho);
 }

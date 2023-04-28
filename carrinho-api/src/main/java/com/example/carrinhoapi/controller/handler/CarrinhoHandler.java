@@ -48,7 +48,7 @@ public class CarrinhoHandler {
         return productUpdateRequestList
                 .flatMap(productUpdates -> {
                     for (CarrinhoRequestUpdate update : productUpdates) {
-                        String produtoId = update.id();
+                        String produtoId = update.getId();
                         carrinhoService.atualizar(produtoId, update).subscribe();
                     }
                     return ServerResponse.ok().build();

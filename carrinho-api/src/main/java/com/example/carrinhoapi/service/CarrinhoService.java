@@ -31,9 +31,9 @@ public class CarrinhoService {
     public Mono<CarrinhoResponse> atualizar(String id, CarrinhoRequestUpdate carrinhoRequestUpdate) {
 
         var carrinho = carrinhoRepository.findById(id);
-        var novoCarrinho = carrinho.block().builder().produto(carrinhoRequestUpdate.produto())
-                .quantidade(carrinhoRequestUpdate.quantidade())
-                .valor(carrinhoRequestUpdate.valor())
+        var novoCarrinho = carrinho.block().builder().produto(carrinhoRequestUpdate.getProduto())
+                .quantidade(carrinhoRequestUpdate.getQuantidade())
+                .valor(carrinhoRequestUpdate.getValor())
                 .build();
         return Mono.just(carrinhoMapper.carrinhoToCarrinhoResponse(novoCarrinho));
 

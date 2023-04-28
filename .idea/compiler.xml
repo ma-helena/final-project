@@ -7,9 +7,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="user-api" />
       </profile>
-      <profile name="Annotation profile for microservice-api" enabled="true">
+      <profile name="Annotation profile for user-api" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -20,6 +19,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
         <module name="carrinho-api" />
+        <module name="user-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -30,7 +30,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="carrinho-api" options="-parameters -Amapstruct.defaultComponentModel=spring" />
-      <module name="user-api" options="-parameters" />
+      <module name="user-api" options="-parameters -Amapstruct.defaultComponentModel=spring" />
     </option>
   </component>
 </project>
